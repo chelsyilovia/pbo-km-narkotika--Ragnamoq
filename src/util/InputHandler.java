@@ -69,3 +69,23 @@ public class InputHandler {
             }
         }
     }
+
+    public static int validasiPilihan(String prompt, int min, int max, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            String raw = sc.nextLine();
+            try {
+                int pilihan = Integer.parseInt(raw.trim());
+                if (pilihan < min || pilihan > max) {
+                    throw new InputMismatchException(
+                            "Pilihan harus di antara " + min + " - " + max + ".");
+                }
+                return pilihan;
+            } catch (NumberFormatException e) {
+                System.out.println("[ERROR] Masukkan angka pilihan yang valid. Coba lagi.");
+            } catch (InputMismatchException e) {
+                System.out.println("[ERROR] " + e.getMessage() + " Coba lagi.");
+            }
+        }
+    }
+}
