@@ -30,3 +30,38 @@ public class Main {
         boolean berjalan = true;
         while (berjalan) {
             int pilihan = view.tampilkanMenu();
+
+            switch (pilihan) {
+                case 1: {
+                    String[] data = view.inputFormPutusan(scanner);
+                    boolean sukses = controller.tambahPutusan(data);
+                    view.tampilkanPesan(sukses
+                            ? "Putusan berhasil ditambahkan."
+                            : "Gagal menambahkan putusan. Periksa kembali data yang dimasukkan.");
+                    break;
+                }
+                case 2: {
+                    view.tampilkanDaftarPutusan(controller.tampilkanSemua());
+                    break;
+                }
+                case 3: {
+                    String nomor = util.InputHandler.validasiString("Masukkan Nomor Perkara: ", scanner);
+                    ArrayList<Putusan> hasil = controller.cariPutusan(nomor, "nomor");
+                    if (hasil.isEmpty()) {
+                        view.tampilkanPesan("Putusan dengan nomor '" + nomor + "' tidak ditemukan.");
+                    } else {
+                        view.tampilkanDetail(hasil.get(0));
+                    }
+                    break;
+                }
+                case 4: {
+                    String nama = util.InputHandler.validasiString("Masukkan Nama Terdakwa: ", scanner);
+                    ArrayList<Putusan> hasil = controller.cariPutusan(nama, "nama");
+                    view.tampilkanDaftarPutusan(hasil);
+                    break;
+                }
+                case 5: {
+                    String jenis = util.InputHandler.validasiString("Masukkan Jenis Narkotika: ", scanner);
+                    view.tampilkanDaftarPutusan(controller.filterPutusan("jenis", jenis));
+                    break;
+                }
