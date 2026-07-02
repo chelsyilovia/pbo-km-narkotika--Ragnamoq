@@ -25,3 +25,22 @@ public class DataGenerator {
     private static final String[] PERAN = {
             "Bandar", "Kurir", "Pengguna", "Penyimpan", "Pengedar"
     };
+
+    private static final String[] HAKIM = {
+            "Dr. Andi Wijaya, S.H., M.H.", "Siti Rahmawati, S.H.",
+            "Bambang Sutrisno, S.H., M.H.", "Maria Christina, S.H.",
+            "Hendro Prasetyo, S.H.", "Dewi Lestari, S.H., M.H."
+    };
+
+    private static final String[] NAMA_DEPAN = {
+            "Ricky", "Budi", "Andi", "Joko", "Slamet", "Dedi", "Agus", "Hendra",
+            "Fajar", "Yusuf", "Rudi", "Bayu", "Doni", "Eko", "Fitra", "Gilang",
+            "Hadi", "Irwan", "Johan", "Kurniawan", "Lukman", "Made", "Nanda",
+            "Oka", "Putra", "Rizky", "Surya", "Taufik", "Umar", "Wawan"
+    };
+
+    private static final String[] NAMA_BELAKANG = {
+            "Setiawan", "Hariyono", "Pratama", "Saputra", "Wijaya", "Kusuma",
+            "Santoso", "Nugroho", "Permana", "Gunawan", "Halim", "Wibowo",
+            "Hidayat", "Firmansyah", "Suryadi"
+    };
