@@ -101,3 +101,23 @@ public class Main {
                     view.tampilkanDaftarPutusan(controller.tampilkanSemua());
                     break;
                 }
+                case 11: {
+                    boolean eksporSukses = controller.eksporStatistik("statistik_putusan.txt");
+                    view.tampilkanPesan(eksporSukses
+                            ? "Statistik berhasil diekspor ke 'statistik_putusan.txt'."
+                            : "Gagal mengekspor statistik.");
+                    break;
+                }
+                case 0: {
+                    berjalan = false;
+                    view.tampilkanPesan("Terima kasih telah menggunakan KMS Putusan Narkotika. Sampai jumpa!");
+                    break;
+                }
+                default:
+                    view.tampilkanPesan("Pilihan tidak dikenali.");
+            }
+        }
+
+        scanner.close();
+    }
+}
