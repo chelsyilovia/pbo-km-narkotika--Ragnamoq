@@ -56,4 +56,9 @@ public class ConsoleView {
             lVonis    = Math.max(lVonis,    (p.getVonisHukuman() + " bln").length());
             lKategori = Math.max(lKategori, safe(p.getKategoriHukuman()).length());
         }
+
+        String format = "%-" + lNomor + "s | %-" + lPgdl + "s | %-" + lNama +
+                "s | %-" + lJenis + "s | %-" + lVonis + "s | %-" + lKategori + "s%n";
+        int totalLebar = lNomor + lPgdl + lNama + lJenis + lVonis + lKategori + 17;
+
 }
