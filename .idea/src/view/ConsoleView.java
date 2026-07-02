@@ -61,4 +61,22 @@ public class ConsoleView {
                 "s | %-" + lJenis + "s | %-" + lVonis + "s | %-" + lKategori + "s%n";
         int totalLebar = lNomor + lPgdl + lNama + lJenis + lVonis + lKategori + 17;
 
+        System.out.println();
+        System.out.printf(format,
+                "NOMOR PERKARA", "PENGADILAN", "NAMA TERDAKWA",
+                "JENIS", "VONIS", "KATEGORI");
+        System.out.println("-".repeat(totalLebar));
+        for (Putusan p : list) {
+            System.out.printf(format,
+                    safe(p.getNomorPerkara()),
+                    safe(p.getPengadilan()),
+                    safe(p.getNamaTerdakwa()),
+                    safe(p.getJenisNarkotika()),
+                    p.getVonisHukuman() + " bln",
+                    safe(p.getKategoriHukuman()));
+        }
+        System.out.println("-".repeat(totalLebar));
+        System.out.printf("Total ditampilkan: %d putusan.%n", list.size());
+    }
+
 }
