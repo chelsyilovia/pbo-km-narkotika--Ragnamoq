@@ -40,4 +40,11 @@ public class ConsoleView {
             tampilkanPesan("Tidak ada data putusan untuk ditampilkan.");
             return;
         }
+
+        int lNomor    = "NOMOR PERKARA".length();
+        int lPgdl     = "PENGADILAN".length();
+        int lNama     = "NAMA TERDAKWA".length();
+        int lJenis    = "JENIS".length();
+        int lVonis    = "VONIS".length();
+        int lKategori = "KATEGORI".length();
 }
