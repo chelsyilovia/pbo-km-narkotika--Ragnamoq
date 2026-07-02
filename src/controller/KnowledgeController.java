@@ -59,3 +59,17 @@ public class KnowledgeController {
             return false;
         }
     }
+
+    public ArrayList<Putusan> cariPutusan(String keyword, String mode) {
+        ArrayList<Putusan> hasil = new ArrayList<>();
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return hasil;
+        }
+        if ("nomor".equalsIgnoreCase(mode)) {
+            Putusan p = repository.cariByNomor(keyword);
+            if (p != null) hasil.add(p);
+        } else if ("nama".equalsIgnoreCase(mode)) {
+            hasil = repository.cariByNama(keyword);
+        }
+        return hasil;
+    }
