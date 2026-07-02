@@ -115,3 +115,28 @@ public class KnowledgeController {
     public void sortByDenda() {
         repository.sortByDendaDescending();
     }
+
+    public boolean eksporStatistik(String namaFile) {
+        StatistikPutusan stat = getStatistik();
+        try (FileWriter writer = new FileWriter(namaFile)) {
+            writer.write("============ LAPORAN STATISTIK PUTUSAN ============\n");
+            writer.write("Total Putusan          : " + stat.getTotalPutusan() + "\n");
+            writer.write(String.format("Rata-rata Vonis Hukuman : %.2f bulan%n", stat.getRataRataVonis()));
+            writer.write(String.format("Rata-rata Vonis Denda   : Rp%.2f%n", stat.getRataRataDenda()));
+            writer.write("Jenis Narkotika Terbanyak: " + stat.getJenisNarkotikaTerbanyak() + "\n");
+            writer.write("Distribusi Peran Terdakwa:\n");
+            for (String baris : stat.getDistribusiPeran()) {
+                writer.write("  - " + baris + "\n");
+            }
+            writer.write("=====================================================\n");
+            return true;
+        } catch (IOException e) {
+            System.out.println("[CONTROLLER ERROR] Gagal menulis file ekspor: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public int getJumlahDataTotal() {
+        return repository.getTotalData();
+    }
+}
