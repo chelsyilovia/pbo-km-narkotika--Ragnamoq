@@ -7,6 +7,8 @@ import java.util.Map;
 public class StatistikPutusan {
 
     private int totalPutusan;
+    private int totalVonis;
+    private double totalDenda;
     private double rataRataVonis;
     private double rataRataDenda;
     private String jenisNarkotikaTerbanyak;
@@ -24,6 +26,8 @@ public class StatistikPutusan {
         totalPutusan = daftar.size();
 
         if (totalPutusan == 0) {
+            totalVonis = 0;
+            totalDenda = 0;
             rataRataVonis = 0;
             rataRataDenda = 0;
             jenisNarkotikaTerbanyak = "Tidak ada data";
@@ -31,8 +35,8 @@ public class StatistikPutusan {
             return;
         }
 
-        int totalVonis = 0;
-        double totalDenda = 0;
+        totalVonis = 0;
+        totalDenda = 0;
 
         Map<String, Integer> hitungJenis = new HashMap<>();
         Map<String, Integer> hitungPeran = new HashMap<>();
@@ -80,6 +84,8 @@ public class StatistikPutusan {
     public void tampilkanLaporan() {
         System.out.println("============ LAPORAN STATISTIK PUTUSAN ============");
         System.out.println("Total Putusan           : " + totalPutusan);
+        System.out.println("Total Vonis             : " + totalVonis + " bulan");
+        System.out.printf("Total Denda             : Rp%.2f%n", totalDenda);
         System.out.printf("Rata-rata Vonis         : %.2f bulan%n", rataRataVonis);
         System.out.printf("Rata-rata Denda         : Rp%.2f%n", rataRataDenda);
         System.out.println("Jenis Narkotika Terbanyak : " + jenisNarkotikaTerbanyak);
@@ -99,6 +105,14 @@ public class StatistikPutusan {
 
     public int getTotalPutusan() {
         return totalPutusan;
+    }
+
+    public int getTotalVonis() {
+        return totalVonis;
+    }
+
+    public double getTotalDenda() {
+        return totalDenda;
     }
 
     public double getRataRataVonis() {
