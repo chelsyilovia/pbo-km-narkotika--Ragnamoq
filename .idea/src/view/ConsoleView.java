@@ -79,4 +79,16 @@ public class ConsoleView {
         System.out.printf("Total ditampilkan: %d putusan.%n", list.size());
     }
 
+    private String safe(String s) {
+        return s == null ? "" : s;
+    }
+
+    public void tampilkanDetail(Putusan p) {
+        if (p == null) {
+            tampilkanPesan("Data putusan tidak ditemukan.");
+            return;
+        }
+        p.tampilkan(true);
+    }
+
 }
