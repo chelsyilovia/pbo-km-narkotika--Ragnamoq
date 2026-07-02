@@ -1,5 +1,8 @@
 package model;
-
+/**
+ * Class yang merepresentasikan data putusan perkara narkotika.
+ * Menyimpan informasi terdakwa, barang bukti, dan vonis.
+ */
 public class Putusan implements Comparable<Putusan> {
 
     private String nomorPerkara;
@@ -16,7 +19,9 @@ public class Putusan implements Comparable<Putusan> {
     private String namaHakim;
 
     private static int jumlahDibuat = 0;
-
+    /**
+     * Constructor default.
+     */
     public Putusan() {
         this.nomorPerkara = "BELUM DIISI";
         this.pengadilan = "BELUM DIISI";
@@ -32,7 +37,9 @@ public class Putusan implements Comparable<Putusan> {
         this.namaHakim = "BELUM DIISI";
         jumlahDibuat++;
     }
-
+    /**
+     * Constructor dengan parameter lengkap.
+     */
     public Putusan(String nomorPerkara, String pengadilan, String tanggalPutusan,
                    String namaTerdakwa, int umurTerdakwa, String jenisNarkotika,
                    double beratBarangBukti, String pasalDilanggar, String peranTerdakwa,
@@ -161,7 +168,11 @@ public class Putusan implements Comparable<Putusan> {
     public static int getJumlahDibuat() {
         return jumlahDibuat;
     }
-
+    /**
+     * Mengembalikan kategori hukuman berdasarkan lama vonis.
+     *
+     * @return kategori hukuman (Ringan, Sedang, atau Berat)
+     */
     public String getKategoriHukuman() {
         if (vonisHukuman < 12) {
             return "Ringan";
