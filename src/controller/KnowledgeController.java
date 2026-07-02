@@ -95,3 +95,23 @@ public class KnowledgeController {
                 return new ArrayList<>();
         }
     }
+
+    public boolean hapusPutusan(String nomor) {
+        return repository.hapus(nomor);
+    }
+
+    public StatistikPutusan getStatistik() {
+        return new StatistikPutusan(repository.getDaftarSemua());
+    }
+
+    public ArrayList<Putusan> tampilkanSemua() {
+        return repository.getDaftarSemua();
+    }
+
+    public void sortByVonis() {
+        repository.sortByVonis();
+    }
+
+    public void sortByDenda() {
+        repository.sortByDendaDescending();
+    }
