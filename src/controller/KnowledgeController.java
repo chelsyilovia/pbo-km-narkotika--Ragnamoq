@@ -73,3 +73,25 @@ public class KnowledgeController {
         }
         return hasil;
     }
+
+    public ArrayList<Putusan> filterPutusan(String kriteria, String nilai) {
+        if (kriteria == null) return new ArrayList<>();
+        switch (kriteria.toLowerCase()) {
+            case "jenis":
+                return repository.filterByJenis(nilai);
+            case "pengadilan":
+                return repository.filterByPengadilan(nilai);
+            case "vonis":
+                try {
+                    String[] parts = nilai.split("-");
+                    int min = Integer.parseInt(parts[0].trim());
+                    int max = Integer.parseInt(parts[1].trim());
+                    return repository.filterByRentangVonis(min, max);
+                } catch (Exception e) {
+                    System.out.println("[CONTROLLER ERROR] Format rentang vonis tidak valid. Gunakan format: min-max");
+                    return new ArrayList<>();
+                }
+            default:
+                return new ArrayList<>();
+        }
+    }
