@@ -98,6 +98,23 @@ public class ConsoleView {
         }
         stat.tampilkanLaporan();
     }
+    public void tampilkanPesan(String pesan) {
+        System.out.println(">> " + pesan);
+    }
 
+    public String[] inputFormPutusan(Scanner sc) {
+        System.out.println();
+        System.out.println("---- FORM TAMBAH PUTUSAN BARU ----");
+        String nomorPerkara = InputHandler.validasiString("Nomor Perkara       : ", sc);
+        String pengadilan = InputHandler.validasiString("Nama Pengadilan     : ", sc);
+        String tanggal = InputHandler.validasiString("Tanggal Putusan     : ", sc);
+        String namaTerdakwa = InputHandler.validasiString("Nama Terdakwa       : ", sc);
+        int umur = InputHandler.validasiIntMinimal("Umur Terdakwa       : ", sc, 0);
+        String jenisNarkotika = InputHandler.validasiString("Jenis Narkotika     : ", sc);
+        double berat = InputHandler.validasiDoubleMinimal("Berat Barang Bukti (gram): ", sc, 0);
+        String pasal = InputHandler.validasiString("Pasal Dilanggar     : ", sc);
+        String peran = InputHandler.validasiString("Peran Terdakwa      : ", sc);
+        int vonisHukuman = InputHandler.validasiIntMinimal("Vonis Hukuman (bulan): ", sc, 0);
+        double vonisDenda = InputHandler.validasiDoubleMinimal("Vonis Denda (rupiah): ", sc, 0);
+        String hakim = InputHandler.validasiString("Nama Hakim          : ", sc);
 
-}
