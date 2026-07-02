@@ -47,4 +47,13 @@ public class ConsoleView {
         int lJenis    = "JENIS".length();
         int lVonis    = "VONIS".length();
         int lKategori = "KATEGORI".length();
+
+        for (Putusan p : list) {
+            lNomor    = Math.max(lNomor,    safe(p.getNomorPerkara()).length());
+            lPgdl     = Math.max(lPgdl,     safe(p.getPengadilan()).length());
+            lNama     = Math.max(lNama,     safe(p.getNamaTerdakwa()).length());
+            lJenis    = Math.max(lJenis,    safe(p.getJenisNarkotika()).length());
+            lVonis    = Math.max(lVonis,    (p.getVonisHukuman() + " bln").length());
+            lKategori = Math.max(lKategori, safe(p.getKategoriHukuman()).length());
+        }
 }
