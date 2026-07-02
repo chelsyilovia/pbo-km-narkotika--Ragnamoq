@@ -35,4 +35,9 @@ public class ConsoleView {
         System.out.println("==================================================");
         return InputHandler.validasiPilihan("Pilih menu (0-11): ", 0, 11, scanner);
     }
+    public void tampilkanDaftarPutusan(ArrayList<Putusan> list) {
+        if (list == null || list.isEmpty()) {
+            tampilkanPesan("Tidak ada data putusan untuk ditampilkan.");
+            return;
+        }
 }
