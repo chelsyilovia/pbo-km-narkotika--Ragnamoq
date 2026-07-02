@@ -1,4 +1,5 @@
 package model;
+
 /**
  * Class yang merepresentasikan data putusan perkara narkotika.
  * Menyimpan informasi terdakwa, barang bukti, dan vonis.
@@ -19,6 +20,7 @@ public class Putusan implements Comparable<Putusan> {
     private String namaHakim;
 
     private static int jumlahDibuat = 0;
+
     /**
      * Constructor default.
      */
@@ -37,6 +39,7 @@ public class Putusan implements Comparable<Putusan> {
         this.namaHakim = "BELUM DIISI";
         jumlahDibuat++;
     }
+
     /**
      * Constructor dengan parameter lengkap.
      */
@@ -60,6 +63,9 @@ public class Putusan implements Comparable<Putusan> {
         jumlahDibuat++;
     }
 
+    /**
+     * Constructor sederhana.
+     */
     public Putusan(String nomorPerkara, String namaTerdakwa,
                    String jenisNarkotika, double beratBarangBukti,
                    int vonisHukuman) {
@@ -74,6 +80,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setNomorPerkara(String nomorPerkara) {
+        if (nomorPerkara == null || nomorPerkara.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nomor perkara tidak boleh kosong.");
+        }
         this.nomorPerkara = nomorPerkara;
     }
 
@@ -82,6 +91,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setPengadilan(String pengadilan) {
+        if (pengadilan == null || pengadilan.trim().isEmpty()) {
+            throw new IllegalArgumentException("Pengadilan tidak boleh kosong.");
+        }
         this.pengadilan = pengadilan;
     }
 
@@ -90,6 +102,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setTanggalPutusan(String tanggalPutusan) {
+        if (tanggalPutusan == null || tanggalPutusan.trim().isEmpty()) {
+            throw new IllegalArgumentException("Tanggal putusan tidak boleh kosong.");
+        }
         this.tanggalPutusan = tanggalPutusan;
     }
 
@@ -98,6 +113,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setNamaTerdakwa(String namaTerdakwa) {
+        if (namaTerdakwa == null || namaTerdakwa.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama terdakwa tidak boleh kosong.");
+        }
         this.namaTerdakwa = namaTerdakwa;
     }
 
@@ -106,6 +124,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setUmurTerdakwa(int umurTerdakwa) {
+        if (umurTerdakwa < 0 || umurTerdakwa > 120) {
+            throw new IllegalArgumentException("Umur terdakwa tidak valid.");
+        }
         this.umurTerdakwa = umurTerdakwa;
     }
 
@@ -114,6 +135,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setJenisNarkotika(String jenisNarkotika) {
+        if (jenisNarkotika == null || jenisNarkotika.trim().isEmpty()) {
+            throw new IllegalArgumentException("Jenis narkotika tidak boleh kosong.");
+        }
         this.jenisNarkotika = jenisNarkotika;
     }
 
@@ -122,6 +146,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setBeratBarangBukti(double beratBarangBukti) {
+        if (beratBarangBukti < 0) {
+            throw new IllegalArgumentException("Berat barang bukti tidak boleh negatif.");
+        }
         this.beratBarangBukti = beratBarangBukti;
     }
 
@@ -130,6 +157,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setPasalDilanggar(String pasalDilanggar) {
+        if (pasalDilanggar == null || pasalDilanggar.trim().isEmpty()) {
+            throw new IllegalArgumentException("Pasal dilanggar tidak boleh kosong.");
+        }
         this.pasalDilanggar = pasalDilanggar;
     }
 
@@ -138,6 +168,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setPeranTerdakwa(String peranTerdakwa) {
+        if (peranTerdakwa == null || peranTerdakwa.trim().isEmpty()) {
+            throw new IllegalArgumentException("Peran terdakwa tidak boleh kosong.");
+        }
         this.peranTerdakwa = peranTerdakwa;
     }
 
@@ -146,6 +179,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setVonisHukuman(int vonisHukuman) {
+        if (vonisHukuman < 0) {
+            throw new IllegalArgumentException("Vonis hukuman tidak boleh negatif.");
+        }
         this.vonisHukuman = vonisHukuman;
     }
 
@@ -154,6 +190,9 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setVonisDenda(double vonisDenda) {
+        if (vonisDenda < 0) {
+            throw new IllegalArgumentException("Vonis denda tidak boleh negatif.");
+        }
         this.vonisDenda = vonisDenda;
     }
 
@@ -162,12 +201,16 @@ public class Putusan implements Comparable<Putusan> {
     }
 
     public void setNamaHakim(String namaHakim) {
+        if (namaHakim == null || namaHakim.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama hakim tidak boleh kosong.");
+        }
         this.namaHakim = namaHakim;
     }
 
     public static int getJumlahDibuat() {
         return jumlahDibuat;
     }
+
     /**
      * Mengembalikan kategori hukuman berdasarkan lama vonis.
      *
