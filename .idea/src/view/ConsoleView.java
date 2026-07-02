@@ -118,3 +118,11 @@ public class ConsoleView {
         double vonisDenda = InputHandler.validasiDoubleMinimal("Vonis Denda (rupiah): ", sc, 0);
         String hakim = InputHandler.validasiString("Nama Hakim          : ", sc);
 
+
+        return new String[]{
+                nomorPerkara, pengadilan, tanggal, namaTerdakwa, String.valueOf(umur),
+                jenisNarkotika, String.valueOf(berat), pasal, peran,
+                String.valueOf(vonisHukuman), String.valueOf(vonisDenda), hakim
+        };
+    }
+}
