@@ -136,4 +136,20 @@ public class KnowledgeRepository {
     public int getTotalData() {
         return daftarPutusan.size();
     }
+
+    /**
+     * Mengecek apakah repository masih kosong.
+     *
+     * @return true jika tidak ada data putusan.
+     */
+    public boolean isEmpty() {
+        return daftarPutusan.isEmpty();
+    }
+
+    /**
+     * Menghapus seluruh data putusan.
+     */
+    public void clear() {
+        daftarPutusan.clear();
+    }
 }
