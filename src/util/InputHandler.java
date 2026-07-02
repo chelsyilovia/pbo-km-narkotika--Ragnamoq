@@ -30,3 +30,42 @@ public class InputHandler {
             return nilai;
         }
     }
+
+    public static double validasiDouble(String prompt, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            String raw = sc.nextLine();
+            try {
+                double nilai = Double.parseDouble(raw.trim());
+                return nilai;
+            } catch (NumberFormatException e) {
+                System.out.println("[ERROR] Input harus berupa angka (boleh desimal). Coba lagi.");
+            }
+        }
+    }
+
+    public static double validasiDoubleMinimal(String prompt, Scanner sc, double minimal) {
+        while (true) {
+            double nilai = validasiDouble(prompt, sc);
+            if (nilai < minimal) {
+                System.out.println("[ERROR] Nilai harus >= " + minimal + ". Coba lagi.");
+                continue;
+            }
+            return nilai;
+        }
+    }
+
+    public static String validasiString(String prompt, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            String raw = sc.nextLine();
+            try {
+                if (raw == null || raw.trim().isEmpty()) {
+                    throw new IllegalArgumentException("Input tidak boleh kosong.");
+                }
+                return raw.trim();
+            } catch (IllegalArgumentException e) {
+                System.out.println("[ERROR] " + e.getMessage() + " Coba lagi.");
+            }
+        }
+    }
