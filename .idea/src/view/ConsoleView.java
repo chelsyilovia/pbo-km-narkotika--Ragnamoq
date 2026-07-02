@@ -91,4 +91,13 @@ public class ConsoleView {
         p.tampilkan(true);
     }
 
+    public void tampilkanStatistik(StatistikPutusan stat) {
+        if (stat == null) {
+            tampilkanPesan("Statistik tidak tersedia.");
+            return;
+        }
+        stat.tampilkanLaporan();
+    }
+
+
 }
