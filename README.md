@@ -14,7 +14,7 @@ Aplikasi berjalan dalam mode **konsol interaktif berbasis teks**.
 
 
 # Video Demo
-**[Klik di sini untuk menonton Video Demo]((https://youtu.be/sSnBz4Dyckg?si=Sx_rjsUZk_jya-Hb))**
+**(https://youtu.be/sSnBz4Dyckg?si=Sx_rjsUZk_jya-Hb)**
 Durasi ±5 menit — mencakup demo fitur CRUD, pencarian, filter, statistik, validasi input, dan penjelasan kode OOP
 
 # Struktur Proyek
