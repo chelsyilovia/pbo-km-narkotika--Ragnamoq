@@ -12,10 +12,9 @@ Aplikasi berjalan dalam mode **konsol interaktif berbasis teks**.
 | 2  | Ghazi Alghifari A. | 202510370110053 |   B   | Backend Developer / Controller Engineer| feature/controller |
 | 3  | Rizal Yoga Bachtiar| 202010370311469 |   B   |      Knowledge / Database Engineer     |    feature/model   |
 
----
 
 # Video Demo
-**[Klik di sini untuk menonton Video Demo](https://youtu.be/LINK_VIDEO_DISINI)**
+**[Klik di sini untuk menonton Video Demo]((https://youtu.be/sSnBz4Dyckg?si=Sx_rjsUZk_jya-Hb))**
 Durasi ±5 menit — mencakup demo fitur CRUD, pencarian, filter, statistik, validasi input, dan penjelasan kode OOP
 
 # Struktur Proyek
